@@ -1,0 +1,90 @@
+[
+    {
+        "id": 0,
+        "type": "Zement",
+        "amount": 10,
+        "offeredBy": "Zementbau Völklingen",
+        "storedIn": "Völklingen",
+        "price": 10000
+    },
+    {
+        "id": 1,
+        "type": "Zement",
+        "amount": 15,
+        "offeredBy": "Hochbau Ludwigshafen",
+        "storedIn": "Ludwigshafen",
+        "price": 12000
+    },
+    {
+        "id": 2,
+        "type": "Zement",
+        "amount": 5,
+        "offeredBy": "HessenBau",
+        "storedIn": "Offenbach",
+        "price": 4000
+    },
+    {
+        "id": 3,
+        "type": "Zement",
+        "amount": 15,
+        "offeredBy": "International Construction Company",
+        "storedIn": "Duisburg",
+        "price": 14000
+    },
+    {
+        "id": 4,
+        "type": "Ziegelsteine",
+        "amount": 10,
+        "offeredBy": "HT Bau",
+        "storedIn": "Wilhelmshaven",
+        "price": 2000
+    },
+    {
+        "id": 5,
+        "type": "Ziegelsteine",
+        "amount": 2,
+        "offeredBy": "Zementbau Völklingen",
+        "storedIn": "Völklingen",
+        "price": 600
+    },
+    {
+        "id": 6,
+        "type": "Ziegelsteine",
+        "amount": 20,
+        "offeredBy": "Krämer Konstruktion",
+        "storedIn": "Oranienburg",
+        "price": 3700
+    },
+    {
+        "id": 7,
+        "type": "Ziegelsteine",
+        "amount": 15,
+        "offeredBy": "Wir Bauen!",
+        "storedIn": "Zwickau",
+        "price": 2000
+    },
+    {
+        "id": 8,
+        "type": "Dachziegel",
+        "amount": 11,
+        "offeredBy": "HT Bau",
+        "storedIn": "Emden",
+        "price": 3200
+    },
+    {
+        "id": 9,
+        "type": "Dachziegel",
+        "amount": 12,
+        "offeredBy": "Krämer Konstruktion",
+        "storedIn": "Oranienburg",
+        "price": 3000
+    },
+    {
+        "id": 10,
+        "type": "Bauholz",
+        "amount": 6,
+        "offeredBy": "Holzbau Furtwangen",
+        "storedIn": "Furtwangen",
+        "price": 5500
+    }
+]

@@ -1,4 +1,6 @@
-export function FormToOffer(props){
+export function FormToOffer(props) {
+    const { setAllOffers } = props
+
     const submitForm = e => {
         e.preventDefault()
     }
