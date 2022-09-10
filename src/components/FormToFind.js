@@ -5,9 +5,9 @@ import { Keywords } from "./Keywords"
 export function FormToFind(props) {
     const { allOffers, setAllOffers } = props
 
-    const [matchingOffers, setMatchingOffers] = useState([])
-    const [baustoff, setBaustoff] = useState(null)
-    const [bought, setBought] = useState([])
+    const [matchingOffers, setMatchingOffers] = useState([]) // all offers of the selected type
+    const [baustoff, setBaustoff] = useState(null) // selected type of baustoff
+    const [bought, setBought] = useState([]) // array of ids of accepted offers
 
     const buyBaustoff = id => {
         setBought(prevIds => {
@@ -21,6 +21,7 @@ export function FormToFind(props) {
         })
     }
 
+    // handles change of selected type of baustoff
     const handleChange = e => {
         const selectedBaustoff = e.target.value
         const copy = [...allOffers]

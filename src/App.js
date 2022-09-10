@@ -7,10 +7,19 @@ import { FormToFind } from "./components/FormToFind"
 import { FormToOffer } from "./components/FormToOffer"
 
 function App() {
+    // contains all offers
+    // in a real application, a GET request inside a useEffect hook would be done to load all offers
     const [allOffers, setAllOffers] = useState(offersJson)
 
     return (
         <div className="App">
+
+            {/*
+                Routes contains the three views of the app
+                    - a start page
+                    - a form to filter offers for the requested type
+                    - a form to post new offers
+            */}
             <Routes>
                 <Route
                     path="/"
