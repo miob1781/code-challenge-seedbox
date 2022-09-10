@@ -3,16 +3,30 @@ import { NavLink } from "react-router-dom"
 import { Keywords } from "./Keywords"
 
 export function FormToFind(props) {
-    const { allOffers, buyBaustoff, bought, setBought } = props
+    const { allOffers, setAllOffers } = props
 
-    const [matchingOffers, setMatchingOffers] = useState(allOffers)
+    const [matchingOffers, setMatchingOffers] = useState([])
     const [baustoff, setBaustoff] = useState(null)
+    const [bought, setBought] = useState([])
+
+    const buyBaustoff = id => {
+        setBought(prevIds => {
+            const newArray = [...prevIds, id]
+            return newArray
+        })
+        setAllOffers(prevOffers => {
+            const copy = [...prevOffers]
+            const newAllOffers = copy.filter(offer => offer.id !== id)
+            return newAllOffers
+        })
+    }
 
     const handleChange = e => {
-        e.preventDefault()
-        const filteredOffers = allOffers.filter(offer => offer.type === e.target.value)
+        const selectedBaustoff = e.target.value
+        const copy = [...allOffers]
+        const filteredOffers = copy.filter(offer => offer.type === selectedBaustoff)
         setMatchingOffers(filteredOffers)
-        setBaustoff(e.target.value)
+        setBaustoff(selectedBaustoff)
     }
 
     const renderOffers = () => {

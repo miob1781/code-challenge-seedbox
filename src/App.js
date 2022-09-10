@@ -8,19 +8,6 @@ import { FormToOffer } from "./components/FormToOffer"
 
 function App() {
     const [allOffers, setAllOffers] = useState(offersJson)
-    const [bought, setBought] = useState([])
-
-    const buyBaustoff = id => {
-        setBought(prevIds => {
-            const newArray = [...prevIds, id]
-            return newArray
-        })
-        setAllOffers(prevOffers => {
-            const copy = [...prevOffers]
-            const newAllOffers = copy.filter(offer => offer.id !== id)
-            return newAllOffers
-        })
-    }
 
     return (
         <div className="App">
@@ -30,10 +17,10 @@ function App() {
                     element={<Home />} />
                 <Route
                     path="/baustoffe-finden"
-                    element={<FormToFind allOffers={allOffers} buyBaustoff={buyBaustoff} bought={bought} setBought={setBought} />} />
+                    element={<FormToFind allOffers={allOffers} setAllOffers={setAllOffers} />} />
                 <Route
                     path="/baustoffe-anbieten"
-                    element={<FormToOffer setAllOffers={setAllOffers} />} />
+                    element={<FormToOffer allOffers={allOffers} setAllOffers={setAllOffers} />} />
             </Routes>
         </div>
     );

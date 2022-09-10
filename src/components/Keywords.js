@@ -3,8 +3,8 @@ export function Keywords(props) {
 
     return (
         <>
-            <label htmlFor="baustoff">Baustoff:</label>
-            <select name="baustoff" id="baustoff" onChange={ handleChange }>
+            <label htmlFor="baustoff">Baustoff: </label>
+            <select name="type" id="baustoff" onChange={ handleChange }>
                 <option value="">--Bitte Baustoff wählen--</option>
                 <option value="Zement">Zement</option>
                 <option value="Ziegelsteine">Ziegelsteine</option>
