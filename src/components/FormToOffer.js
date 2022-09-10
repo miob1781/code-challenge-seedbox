@@ -7,6 +7,7 @@ export function FormToOffer(props) {
 
     const [formData, setFormData] = useState({})
     const [offerCreated, setOfferCreated] = useState(false)
+    const [errorMessage, setErrorMessage] = useState("")
 
     const handleChange = e => {
         const name = e.target.name
@@ -18,6 +19,13 @@ export function FormToOffer(props) {
 
     const submitForm = e => {
         e.preventDefault()
+
+        if (!formData.type) {
+            setErrorMessage("Bitte wählen Sie einen Baustoff.")
+            setOfferCreated(false)
+            return
+        }
+
         const copy = {...formData}
         const ids = allOffers.map(offer => offer.id)
 
@@ -32,13 +40,7 @@ export function FormToOffer(props) {
 
         setAllOffers(prevOffers => [...prevOffers, newOffer])
         setOfferCreated(true)
-        setFormData(prevData => {
-            const emptyFormData = {}
-            const keys = Object.keys(prevData)
-            keys.forEach(key => emptyFormData[key] = null)
-            return emptyFormData
-        })
-
+        setErrorMessage("")
         e.target.reset()
     }
 
@@ -55,6 +57,7 @@ export function FormToOffer(props) {
                     id="offeredBy"
                     name="offeredBy"
                     onChange={handleChange}
+                    required
                     />
                 <br />
                 <label htmlFor="storedIn">Lagerort: </label>
@@ -63,6 +66,7 @@ export function FormToOffer(props) {
                     id="storedIn"
                     name="storedIn"
                     onChange={handleChange}
+                    required
                     />
                 <br />
                 <label htmlFor="amount">Menge (in Tonnen): </label>
@@ -71,6 +75,7 @@ export function FormToOffer(props) {
                     id="amount"
                     name="amount"
                     onChange={handleChange}
+                    required
                     />
                 <br />
                 <label htmlFor="price">Preis (in Eur): </label>
@@ -79,10 +84,12 @@ export function FormToOffer(props) {
                     id="price"
                     name="price"
                     onChange={handleChange}
+                    required
                     />
                 <br />
                 <button>Absenden</button>
             </form>
+            <p>{errorMessage}</p>
             <p style={{display: offerCreated ? "block" : "none"}}>Sie haben ein neues Angebot erstellt.</p>
             <NavLink to={"/"}>
                 <button type="button">Zurück</button>
