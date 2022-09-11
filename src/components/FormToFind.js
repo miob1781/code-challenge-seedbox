@@ -42,7 +42,7 @@ export function FormToFind(props) {
                         <p>Menge: {offer.amount} t</p>
                         <p>Preis: {offer.price} Eur</p>
                         <p>Gelagert in: {offer.storedIn}</p>
-                        <button type="button" disabled={bought.includes(offer.id)} onClick={() => buyBaustoff(offer.id)}>Kaufen</button>
+                        <button type="button" className="submit" disabled={bought.includes(offer.id)} onClick={() => buyBaustoff(offer.id)}>Kaufen</button>
                         <p style={{ display: bought.includes(offer.id) ? "block" : "none" }}>Sie haben {baustoff} bei {offer.offeredBy} gekauft.</p>
                         <hr />
                     </div>
@@ -56,7 +56,7 @@ export function FormToFind(props) {
             <Keywords handleChange={handleChange} />
             {renderOffers()}
             <NavLink to={"/"}>
-                <button type="button">Zurück</button>
+                <button type="button" className="nav">Zurück</button>
             </NavLink>
         </>
     )

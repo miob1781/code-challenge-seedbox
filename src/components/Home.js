@@ -10,10 +10,10 @@ export function Home(props){
             
             <div className="buttons">
                 <NavLink to="/baustoffe-finden">
-                    <button type="button">Baustoffe finden</button>
+                    <button type="button" className="nav">Baustoffe finden</button>
                 </NavLink>
                 <NavLink to="/baustoffe-anbieten">
-                    <button type="button">Baustoffe anbieten</button>
+                    <button type="button" className="nav">Baustoffe anbieten</button>
                 </NavLink>
             </div>
         </>

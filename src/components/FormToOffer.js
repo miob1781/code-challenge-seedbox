@@ -92,12 +92,12 @@ export function FormToOffer(props) {
                     required
                 />
                 <br />
-                <button>Absenden</button>
+                <button className="submit">Absenden</button>
             </form>
-            <p>{errorMessage}</p>
+            <p className="error">{errorMessage}</p>
             <p style={{ display: offerCreated ? "block" : "none" }}>Sie haben ein neues Angebot erstellt.</p>
             <NavLink to={"/"}>
-                <button type="button">Zurück</button>
+                <button type="button" className="nav">Zurück</button>
             </NavLink>
         </>
     )
